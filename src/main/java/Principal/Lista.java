@@ -10,8 +10,8 @@ public class Lista {
     private No tail;
 
     // INSERE NO INÍCIO DA LISTA
-    public void inserePrimeiro(String estado, int nivel, No p) {
-        No novoNo = new No(p, estado, nivel, null, null);
+    public void inserePrimeiro(String estado, int nivel, No pai) {
+        No novoNo = new No(pai, estado, nivel, null, null);
         if (head == null) {
             tail = novoNo;
             head = novoNo;
@@ -97,8 +97,8 @@ public class Lista {
     }
 
     // EXIBE O CAMINHO ENCONTRADO
-    public List<Object> exibeCaminho() {
-        List<Object> caminho = new ArrayList<>();
+    public List<String> exibeCaminho() {
+        List<String> caminho = new ArrayList<>();
         No atual = tail;
 
         while (atual.getPai() != null) {

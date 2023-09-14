@@ -24,15 +24,20 @@ public class Main {
         }
 
         String origem = "ubatuba";
-        String destino = "suzano";
+        String destino = "jardimSaoJudas";
 
         System.out.println("\n\nVocê está saindo de " + origem + " em destino à " + destino);
         
         Busca busca = new Busca();
-        /*List<String>*/ Object caminho = busca.amplitude(origem, destino, cidades, cidadesPorLinha);
+        Object amplitude = busca.amplitude(origem, destino, cidades, cidadesPorLinha);
+        Object profundidade = busca.profundidade(origem, destino, cidades, cidadesPorLinha);
+        Object profundidadeLimitada = busca.profundidadeLimitada(origem, destino, cidades, cidadesPorLinha, 6);
 
-        System.out.println("\n<<<   AMPLITUDE   >>>\n" + caminho);
+        System.out.println("\n<<<   AMPLITUDE   >>>\n" + amplitude);
 
+        System.out.println("\n<<<   PROFUNDIDADE   >>>\n" + profundidade);
+
+        System.out.println("\n<<<   PROFUNDIDADE LIMITADA   >>>\n" + profundidadeLimitada);
 
     }
     
