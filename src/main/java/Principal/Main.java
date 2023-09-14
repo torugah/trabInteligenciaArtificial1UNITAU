@@ -23,8 +23,18 @@ public class Main {
             System.out.println(linhaDeCidades);
         }
 
-        String origem = "ubatuba";
-        String destino = "jardimSaoJudas";
+        Scanner sc = new Scanner(System.in);
+
+        String origem;
+        String destino;
+
+        System.out.println("Por qual cidade você iniciará?");
+
+        origem = sc.next();    
+
+        System.out.println("E qual a cidada de destino?");
+
+        destino = sc.next();    
 
         System.out.println("\n\nVocê está saindo de " + origem + " em destino à " + destino);
         
@@ -32,12 +42,15 @@ public class Main {
         Object amplitude = busca.amplitude(origem, destino, cidades, cidadesPorLinha);
         Object profundidade = busca.profundidade(origem, destino, cidades, cidadesPorLinha);
         Object profundidadeLimitada = busca.profundidadeLimitada(origem, destino, cidades, cidadesPorLinha, 6);
+        Object profundidadeIterativa = busca.profundidadeItarativa(origem, destino, cidades, cidadesPorLinha, 15);
 
         System.out.println("\n<<<   AMPLITUDE   >>>\n" + amplitude);
 
         System.out.println("\n<<<   PROFUNDIDADE   >>>\n" + profundidade);
 
         System.out.println("\n<<<   PROFUNDIDADE LIMITADA   >>>\n" + profundidadeLimitada);
+
+        System.out.println("\n<<<   PROFUNDIDADE ITERATIVA   >>>\n" + profundidadeIterativa);
 
     }
     
