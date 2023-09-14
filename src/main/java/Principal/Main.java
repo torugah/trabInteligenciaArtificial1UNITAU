@@ -43,6 +43,7 @@ public class Main {
         Object profundidade = busca.profundidade(origem, destino, cidades, cidadesPorLinha);
         Object profundidadeLimitada = busca.profundidadeLimitada(origem, destino, cidades, cidadesPorLinha, 6);
         Object profundidadeIterativa = busca.profundidadeItarativa(origem, destino, cidades, cidadesPorLinha, 15);
+        Object bidirecional = busca.bidirecional(origem, destino, cidades, cidadesPorLinha);
 
         System.out.println("\n<<<   AMPLITUDE   >>>\n" + amplitude);
 
@@ -51,6 +52,8 @@ public class Main {
         System.out.println("\n<<<   PROFUNDIDADE LIMITADA   >>>\n" + profundidadeLimitada);
 
         System.out.println("\n<<<   PROFUNDIDADE ITERATIVA   >>>\n" + profundidadeIterativa);
+
+        System.out.println("\n<<<   BIDIRECIONAL  >>>\n" + bidirecional);
 
     }
     

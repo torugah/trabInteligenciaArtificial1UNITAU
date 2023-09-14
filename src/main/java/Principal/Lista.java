@@ -111,13 +111,13 @@ public class Lista {
     }
 
     // EXIBE O CAMINHO ENCONTRADO (BIDIRECIONAL)
-    public List<Object> exibeCaminho1(Object valor) {
+    public List<String> exibeCaminho1(Object valor) {
         No atual = head;
         while (!atual.getEstado().equals(valor)) {
             atual = atual.getProximo();
         }
 
-        List<Object> caminho = new ArrayList<>();
+        List<String> caminho = new ArrayList<>();
         atual = atual.getPai();
 
         while (atual.getPai() != null) {

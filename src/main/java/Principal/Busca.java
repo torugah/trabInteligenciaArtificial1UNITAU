@@ -234,8 +234,7 @@ public class Busca {
         return Collections.singletonList("Caminho não encontrado");
     }// fim da profundidade limitada
 
-    public List<String> profundidadeItarativa(String inicio, String fim, List<String> nos, List<List<String>> grafo,
-            int limiteMax) {
+    public List<String> profundidadeItarativa(String inicio, String fim, List<String> nos, List<List<String>> grafo, int limiteMax) {
 
         for (int limite = 1; limite <= limiteMax; limite++) {
 
@@ -314,4 +313,164 @@ public class Busca {
 
     }// fim da profundidade limitada
 
+    public List<String> bidirecional(String inicio, String fim, List<String> nos, List<List<String>> grafo) {
+        // Primeira Amplitude
+        // Manipular a FILA para a busca
+        Lista l1 = new Lista();
+        // Cópia para apresentar o caminho (somente inserção)
+        Lista l2 = new Lista();
+
+        // Segunda Amplitude
+        // Manipular a FILA para a busca
+        Lista l3 = new Lista();
+        // Cópia para apresentar o caminho (somente inserção)
+        Lista l4 = new Lista();
+
+        // Insere ponto inicial como nó raiz da árvore
+        l1.insereUltimo(inicio, 0, null);
+        l2.insereUltimo(inicio, 0, null);
+
+        l3.insereUltimo(fim, 0, null);
+        l4.insereUltimo(fim, 0, null);
+
+        // Controle de nós visitados
+        List<List<Object>> visitado1 = new ArrayList<>();
+        List<Object> linha = new ArrayList<>();
+        linha.add(inicio);
+        linha.add(0);
+        visitado1.add(linha);
+
+        List<List<Object>> visitado2 = new ArrayList<>();
+        linha = new ArrayList<>();
+        linha.add(fim);
+        linha.add(0);
+        visitado2.add(linha);
+
+        int ni = 0;
+        while (!l1.vazio() || !l3.vazio()) {
+            while (!l1.vazio()) {
+                // Para ir para o próximo amplitude
+                if (ni != l1.primeiro().getNivel()) {
+                    break;
+                }
+                // Remove o primeiro da fila
+                No atual = l1.deletaPrimeiro();
+
+                int ind = nos.indexOf(atual.getEstado());
+
+                // Varre todos as conexões dentro do grafo a partir de atual
+                for (String novo : grafo.get(ind)) {
+                    // Pressuponho que não foi visitado
+                    boolean flag = true;
+
+                    // Controle de nós repetidos
+                    for (int j = 0; j < visitado1.size(); j++) {
+                        List<Object> visitado1Item = visitado1.get(j);
+                        if (visitado1Item.get(0).equals(novo)) {
+                            int nivel = (int) visitado1Item.get(1);
+                            if (nivel <= (atual.getNivel() + 1)) {
+                                flag = false;
+                            } else {
+                                visitado1Item.set(1, atual.getNivel() + 1);
+                            }
+                            break;
+                        }
+                    }
+
+                    // Se não foi visitado, inclui na fila
+                    if (flag) {
+                        l1.insereUltimo(novo, atual.getNivel() + 1, atual);
+                        l2.insereUltimo(novo, atual.getNivel() + 1, atual);
+
+                        // Marca como visitado
+                        linha = new ArrayList<>();
+                        linha.add(novo);
+                        linha.add(atual.getNivel() + 1);
+                        visitado1.add(linha);
+
+                        // Verifica se é o objetivo
+                        flag = false;
+                        for (int j = 0; j < visitado2.size(); j++) {
+                            List<Object> visitado2Item = visitado2.get(j);
+                            if (visitado2Item.get(0).equals(novo)) {
+                                flag = true;
+                                break;
+                            }
+                        }
+
+                        if (flag) {
+                            List<String> caminho = new ArrayList<>();
+                            caminho.addAll(l2.exibeCaminho());
+                            caminho.addAll(l4.exibeCaminho1(novo));
+                            return caminho;
+                        }
+                    }
+                }
+            }
+
+            while (!l3.vazio()) {
+                // Para ir para o próximo amplitude
+                if (ni != l3.primeiro().getNivel()) {
+                    break;
+                }
+
+                // Remove o primeiro da fila
+                No atual = l3.deletaPrimeiro();
+
+                int ind = nos.indexOf(atual.getEstado());
+
+                // Varre todos as conexões dentro do grafo a partir de atual
+                for (String novo : grafo.get(ind)) {
+                    // Pressuponho que não foi visitado
+                    boolean flag = true;
+
+                    // Controle de nós repetidos
+                    for (int j = 0; j < visitado2.size(); j++) {
+                        List<Object> visitado2Item = visitado2.get(j);
+                        if (visitado2Item.get(0).equals(novo)) {
+                            int nivel = (int) visitado2Item.get(1);
+                            if (nivel <= (atual.getNivel() + 1)) {
+                                flag = false;
+                            } else {
+                                visitado2Item.set(1, atual.getNivel() + 1);
+                            }
+                            break;
+                        }
+                    }
+
+                    // Se não foi visitado, inclui na fila
+                    if (flag) {
+                        l3.insereUltimo(novo, atual.getNivel() + 1, atual);
+                        l4.insereUltimo(novo, atual.getNivel() + 1, atual);
+
+                        // Marca como visitado
+                        linha = new ArrayList<>();
+                        linha.add(novo);
+                        linha.add(atual.getNivel() + 1);
+                        visitado2.add(linha);
+
+                        // Verifica se é o objetivo
+                        flag = false;
+                        for (int j = 0; j < visitado1.size(); j++) {
+                            List<Object> visitado1Item = visitado1.get(j);
+                            if (visitado1Item.get(0).equals(novo)) {
+                                flag = true;
+                                break;
+                            }
+                        }
+
+                        if (flag) {
+                            List<String> caminho = new ArrayList<>();
+                            caminho.addAll(l4.exibeCaminho());
+                            caminho.addAll(l2.exibeCaminho1(novo));
+                            Collections.reverse(caminho);
+                            return caminho;
+                        }
+                    }
+                }
+            }
+            ni++;
+        }
+        return Collections.singletonList("Caminho não encontrado");
+    }
 }
