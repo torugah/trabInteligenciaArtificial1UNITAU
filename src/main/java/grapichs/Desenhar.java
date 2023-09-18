@@ -16,6 +16,7 @@ public class Desenhar extends JFrame {
         this.listaCidadesCaminho = listaCidadesCaminho;
     }
 
+    
     public void paint(Graphics g) {
 
         g.drawOval(1530, 980, 20, 20); // Ubatuba
@@ -53,106 +54,106 @@ public class Desenhar extends JFrame {
         for (int i = 0; i <= listaCidadesCaminho.size(); i++) {
 
             if (listaCidadesCaminho.get(i).equals("caragua") && listaCidadesCaminho.get(i + 1).equals("barraDaVargina")) {
-                g.drawLine(1310, 1010, 1135, 880);
+            g.drawLine(1290, 990, 1115, 860);
             }
-            if (listaCidadesCaminho.get(i).equals("caragua") && listaCidadesCaminho.get(i + 1).equals("ubatuba")) {
-                g.drawLine(1310, 1010, 1540, 990);
+                if (listaCidadesCaminho.get(i).equals("caragua") && listaCidadesCaminho.get(i + 1).equals("ubatuba")) {
+            g.drawLine(1290, 990, 1520, 970);
             }
             if (listaCidadesCaminho.get(i).equals("mogiDasCruzes") && listaCidadesCaminho.get(i + 1).equals("suzano")) {
-                g.drawLine(1020, 870, 760, 875);
+            g.drawLine(1070, 850, 740, 855);
             }
             if (listaCidadesCaminho.get(i).equals("mogiDasCruzes") && listaCidadesCaminho.get(i + 1).equals("salesopolis")) {
-                g.drawLine(1020, 870, 1190, 980);
+            g.drawLine(1070, 850, 1170, 960);
             }
             if (listaCidadesCaminho.get(i).equals("saoLuiz") && listaCidadesCaminho.get(i + 1).equals("ubatuba")) {
-                g.drawLine(1490, 760, 1540, 990);
+            g.drawLine(1470, 740, 1520, 970);
             }
             if (listaCidadesCaminho.get(i).equals("saoLuiz") && listaCidadesCaminho.get(i + 1).equals("carapeva")) {
-                g.drawLine(1490, 760, 1300, 660);
+            g.drawLine(1470, 740, 1280, 640);
             }
             if (listaCidadesCaminho.get(i).equals("carapeva") && listaCidadesCaminho.get(i + 1).equals("saoLuiz")) {
-                g.drawLine(1300, 660, 1490, 760);
+            g.drawLine(1280, 640, 1470, 740);
             }
             if (listaCidadesCaminho.get(i).equals("carapeva") && listaCidadesCaminho.get(i + 1).equals("taubate")) {
-                g.drawLine(1300, 660, 1194, 550);
+            g.drawLine(1280, 640, 1174, 530);
             }
             if (listaCidadesCaminho.get(i).equals("saoJose") && listaCidadesCaminho.get(i + 1).equals("cacapava")) {
-                g.drawLine(1100, 300, 1130, 330);
+            g.drawLine(890, 280, 1010, 310);
             }
             if (listaCidadesCaminho.get(i).equals("saoJose") && listaCidadesCaminho.get(i + 1).equals("paratei")) {
-                g.drawLine(1100, 300, 810, 630);
+            g.drawLine(890, 280, 590, 610);
             }
             if (listaCidadesCaminho.get(i).equals("paraibuna") && listaCidadesCaminho.get(i + 1).equals("jardimSaoJudas")) {
-                g.drawLine(1110, 790, 1040, 680);
+            g.drawLine(1090, 770, 820, 660);
             }
             if (listaCidadesCaminho.get(i).equals("paraibuna") && listaCidadesCaminho.get(i + 1).equals("barraDaVargina")) {
-                g.drawLine(1110, 790, 1135, 880);
+            g.drawLine(1090, 770, 1115, 860);
             }
             if (listaCidadesCaminho.get(i).equals("paratei") && listaCidadesCaminho.get(i + 1).equals("saoJose")) {
-                g.drawLine(810, 630, 1100, 300);
+            g.drawLine(590, 610, 890, 280);
             }
             if (listaCidadesCaminho.get(i).equals("paratei") && listaCidadesCaminho.get(i + 1).equals("jardimSaoJudas")) {
-                g.drawLine(810, 630, 1040, 680);
+            g.drawLine(590, 610, 820, 660);
             }
             if (listaCidadesCaminho.get(i).equals("paratei") && listaCidadesCaminho.get(i + 1).equals("suzano")) {
-                g.drawLine(810, 630, 760, 875);
+            g.drawLine(590, 610, 740, 855);
             }
             if (listaCidadesCaminho.get(i).equals("suzano") && listaCidadesCaminho.get(i + 1).equals("paratei")) {
-                g.drawLine(760, 875, 810, 630);
+            g.drawLine(740, 855, 590, 610);
             }
             if (listaCidadesCaminho.get(i).equals("suzano") && listaCidadesCaminho.get(i + 1).equals("mogiDasCruzes")) {
-                g.drawLine(760, 875, 1020, 870);
+            g.drawLine(740, 855, 1070, 850);
             }
             if (listaCidadesCaminho.get(i).equals("cacapavaVelha") && listaCidadesCaminho.get(i + 1).equals("taubate")) {
-                g.drawLine(1190, 500, 1194, 550);
+            g.drawLine(1030, 480, 1174, 530);
             }
             if (listaCidadesCaminho.get(i).equals("cacapavaVelha") && listaCidadesCaminho.get(i + 1).equals("jardimSaoJudas")) {
-                g.drawLine(1190, 500, 1040, 680);
+            g.drawLine(1030, 480, 820, 660);
             }
             if (listaCidadesCaminho.get(i).equals("salesopolis") && listaCidadesCaminho.get(i + 1).equals("mogiDasCruzes")) {
-                g.drawLine(1190, 980, 1020, 870);
+            g.drawLine(1170, 960, 1070, 850);
             }
             if (listaCidadesCaminho.get(i).equals("salesopolis") && listaCidadesCaminho.get(i + 1).equals("barraDaVargina")) {
-                g.drawLine(1190, 980, 1135, 880);
+            g.drawLine(1170, 960, 1115, 860);
             }
             if (listaCidadesCaminho.get(i).equals("taubate") && listaCidadesCaminho.get(i + 1).equals("carapeva")) {
-                g.drawLine(1194, 550, 1300, 660);
+            g.drawLine(1174, 530, 1280, 640);
             }
             if (listaCidadesCaminho.get(i).equals("taubate") && listaCidadesCaminho.get(i + 1).equals("cacapava")) {
-                g.drawLine(1194, 550, 1130, 330);
+            g.drawLine(1174, 530, 1010, 310);
             }
             if (listaCidadesCaminho.get(i).equals("taubate") && listaCidadesCaminho.get(i + 1).equals("cacapavaVelha")) {
-                g.drawLine(1194, 550, 1190, 500);
+            g.drawLine(1174, 530, 1030, 480);
             }
             if (listaCidadesCaminho.get(i).equals("cacapava") && listaCidadesCaminho.get(i + 1).equals("taubate")) {
-                g.drawLine(1130, 330, 1194, 550);
+            g.drawLine(1010, 310, 1174, 530);
             }
             if (listaCidadesCaminho.get(i).equals("cacapava") && listaCidadesCaminho.get(i + 1).equals("saoJose")) {
-                g.drawLine(1130, 330, 1100, 300);
+            g.drawLine(1010, 310, 890, 280);
             }
             if (listaCidadesCaminho.get(i).equals("ubatuba") && listaCidadesCaminho.get(i + 1).equals("saoLuiz")) {
-                g.drawLine(1540, 990, 1490, 760);
+            g.drawLine(1520, 970, 1470, 740);
             }
             if (listaCidadesCaminho.get(i).equals("ubatuba") && listaCidadesCaminho.get(i + 1).equals("caragua")) {
-                g.drawLine(1540, 990, 1310, 1010);
+            g.drawLine(1520, 970, 1290, 990);
             }
             if (listaCidadesCaminho.get(i).equals("barraDaVargina") && listaCidadesCaminho.get(i + 1).equals("paraibuna")) {
-                g.drawLine(1135, 880, 1110, 790);
+            g.drawLine(1115, 860, 1090, 770);
             }
             if (listaCidadesCaminho.get(i).equals("barraDaVargina") && listaCidadesCaminho.get(i + 1).equals("salesopolis")) {
-                g.drawLine(1135, 880, 1190, 980);
+            g.drawLine(1115, 860, 1170, 960);
             }
             if (listaCidadesCaminho.get(i).equals("barraDaVargina") && listaCidadesCaminho.get(i + 1).equals("caragua")) {
-                g.drawLine(1135, 880, 1310, 1010);
+            g.drawLine(1115, 860, 1290, 990);
             }
             if (listaCidadesCaminho.get(i).equals("jardimSaoJudas") && listaCidadesCaminho.get(i + 1).equals("paratei")) {
-                g.drawLine(1040, 680, 810, 630);
+            g.drawLine(820, 660, 590, 610);
             }
             if (listaCidadesCaminho.get(i).equals("jardimSaoJudas") && listaCidadesCaminho.get(i + 1).equals("cacapavaVelha")) {
-                g.drawLine(1040, 680, 1190, 500);
+            g.drawLine(820, 660, 1030, 480);
             }
             if (listaCidadesCaminho.get(i).equals("jardimSaoJudas") && listaCidadesCaminho.get(i + 1).equals("paraibuna")) {
-                g.drawLine(1040, 680, 1110, 790);
+            g.drawLine(820, 660, 1090, 770);
             }
 
         }
