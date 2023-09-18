@@ -62,6 +62,8 @@ public class Trabalho_Um_IA {
         
         Desenhar d = new Desenhar(profundidadeIterativa);  
 
+        System.out.println(d.listaCidadesCaminho);
+
 
     }
     

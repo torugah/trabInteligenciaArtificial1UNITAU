@@ -31,7 +31,7 @@ public class Desenhar extends JFrame {
         g.drawOval(1125, 870, 20, 20); // Barra da Vargina
         g.drawOval(1100, 780, 20, 20); // Paraibuna
         g.drawOval(1180, 970, 20, 20); // Salesópolis
-        g.drawOval(1080, 860, 20, 20); // Mogi das Cruzes     
+        g.drawOval(1000, 860, 20, 20); // Mogi das Cruzes     
         g.drawOval(750, 865, 20, 20); // Suzano
 
         g.drawString("Ubatuba", 1550, 995); // Adicionei 20 a x e y
@@ -47,7 +47,7 @@ public class Desenhar extends JFrame {
         g.drawString("Barra da Vargina", 1145, 890); // Adicionei 20 a x e y
         g.drawString("Paraibuna", 1120, 800); // Adicionei 20 a x e y
         g.drawString("Salesópolis", 1200, 990); // Adicionei 20 a x e y
-        g.drawString("Mogi das Cruzes", 1100, 880); // Adicionei 20 a x e y
+        g.drawString("Mogi das Cruzes", 1020, 880); // Adicionei 20 a x e y
         g.drawString("Suzano", 770, 885); // Adicionei 20 a x e y
 
         for (int i = 0; i <= listaCidadesCaminho.size(); i++) {
@@ -59,10 +59,10 @@ public class Desenhar extends JFrame {
                 g.drawLine(1310, 1010, 1540, 990);
             }
             if (listaCidadesCaminho.get(i).equals("mogiDasCruzes") && listaCidadesCaminho.get(i + 1).equals("suzano")) {
-                g.drawLine(1090, 870, 760, 875);
+                g.drawLine(1020, 870, 760, 875);
             }
             if (listaCidadesCaminho.get(i).equals("mogiDasCruzes") && listaCidadesCaminho.get(i + 1).equals("salesopolis")) {
-                g.drawLine(1090, 870, 1190, 980);
+                g.drawLine(1020, 870, 1190, 980);
             }
             if (listaCidadesCaminho.get(i).equals("saoLuiz") && listaCidadesCaminho.get(i + 1).equals("ubatuba")) {
                 g.drawLine(1490, 760, 1540, 990);
@@ -101,7 +101,7 @@ public class Desenhar extends JFrame {
                 g.drawLine(760, 875, 810, 630);
             }
             if (listaCidadesCaminho.get(i).equals("suzano") && listaCidadesCaminho.get(i + 1).equals("mogiDasCruzes")) {
-                g.drawLine(760, 875, 1090, 870);
+                g.drawLine(760, 875, 1020, 870);
             }
             if (listaCidadesCaminho.get(i).equals("cacapavaVelha") && listaCidadesCaminho.get(i + 1).equals("taubate")) {
                 g.drawLine(1190, 500, 1194, 550);
@@ -110,7 +110,7 @@ public class Desenhar extends JFrame {
                 g.drawLine(1190, 500, 1040, 680);
             }
             if (listaCidadesCaminho.get(i).equals("salesopolis") && listaCidadesCaminho.get(i + 1).equals("mogiDasCruzes")) {
-                g.drawLine(1190, 980, 1090, 870);
+                g.drawLine(1190, 980, 1020, 870);
             }
             if (listaCidadesCaminho.get(i).equals("salesopolis") && listaCidadesCaminho.get(i + 1).equals("barraDaVargina")) {
                 g.drawLine(1190, 980, 1135, 880);
