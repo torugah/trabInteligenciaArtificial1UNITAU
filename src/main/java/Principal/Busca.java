@@ -160,8 +160,7 @@ public class Busca {
         return Collections.singletonList("Caminho não encontrado");
     }// fim da profundidade
 
-    public List<String> profundidadeLimitada(String inicio, String fim, List<String> nos, List<List<String>> grafo,
-            int limite) {
+    public List<String> profundidadeLimitada(String inicio, String fim, List<String> nos, List<List<String>> grafo, int limite) {
         // Manipular a PILHA para a busca
         Lista l1 = new Lista();
 
